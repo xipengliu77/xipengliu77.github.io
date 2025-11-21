@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">刘曦鹏 (Xipeng LIU) - 微生物生态学家</title>
+    <!-- 引入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 配置 Tailwind CSS 使用 Inter 字体 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+    </style>
+    <!-- Tailwind 配置自定义颜色和圆角 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0056b3', // 谷歌蓝
+                        'secondary': '#e9ecef', // 浅灰色背景
+                        'accent': '#1e40af', // 深蓝色
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- 自定义语言切换逻辑和内容数据 -->
+    <script type="text/javascript">
+        // 核心内容数据，包含中英文两个版本
+        const contentData = {
+            'zh-CN': {
+                name: "刘曦鹏 Xipeng LIU",
+                title: "微生物生态学家 (PhD, Microbial Ecologist) | CNRS 博士后研究员",
+                bio: "凭借在微生物生态学、数据分析、实验设计和科学交流方面的扎实基础，我渴望继续推动微生物群落与其环境之间复杂动态的知识边界，并致力于将生态机制与生态系统可持续性策略相结合，以应对气候变化等挑战。",
+                hIndexText: "h-index: 13",
+                citationCount: "引用次数: 820+",
+                nav: {
+                    about: "关于我",
+                    experience: "教育与经历",
+                    research: "科研项目",
+                    publications: "出版物",
+                    skills: "专业技能",
+                },
+                sections: {
+                    experienceTitle: "教育与专业经历 (Education & Professional Background)",
+                    researchTitle: "科研经历与项目 (Research Projects)",
+                    publicationsTitle: "出版物 (Selected Publications, H-index: 13)",
+                    skillsTitle: "专业技能与兴趣 (Skills & Interests)",
+                    awardsTitle: "荣誉、奖项与服务 (Honors, Awards, and Services)",
+                },
+                experience: [
+                    { title: "博士后研究员 (Post-doctoral fellow)", org: "法国国家科学研究中心 (CNRS), 里昂, 法国", field: "研究方向: 微生物群落生态学与气候变化", time: "2024.03 – 至今", highlight: true, note: "导师: Prof. Ashley Shade" },
+                    { title: "博士 (Ph.D.)", org: "格罗宁根大学 (University of Groningen), 荷兰", field: "专业: 微生物群落生态学", time: "2019.11 – 2024.01", note: "导师: Prof. Joana Falcão Salles, Assistant Prof. Thomas Hackl" },
+                    { title: "访问学生 (Visiting student)", org: "中国科学院城市环境研究所, 厦门, 中国", field: "研究方向: 环境微生物生态学与生物信息学", time: "2017.09 – 2019.01", note: "导师: Prof. Xuming Wang" },
+                    { title: "硕士 (M.Sc.)", org: "浙江大学 (Zhejiang University), 杭州, 中国", field: "专业: 农业资源利用", time: "2016.09 – 2019.09", note: "导师: Prof. Xiaorong Lin" }
+                ],
+                research: [
+                    { 
+                        title: "ERC 项目: 解决微生物组拯救机制以促进对气候变化的恢复力 (MicroRescue)", 
+                        type: "博士后项目", 
+                        time: "2024.03 – 至今", 
+                        collaborators: "Prof. Ashley Shade, Dr. Milena Gonzalo 等",
+                        contributions: [
+                            "探索欧洲休眠土壤微生物的组成和功能，揭示其在气候变化背景下微生物组恢复力中的生态作用。",
+                            "评估土壤微生物对极端气候事件的失活和持久性，并研究微生物活性的生物地理格局和动态变化。"
+                        ]
+                    },
+                    { 
+                        title: "博士项目: 活性土壤中微生物入侵的机制和后果", 
+                        type: "博士研究", 
+                        time: "2019.11 – 2024.01", 
+                        collaborators: "Prof. Joana Falcão Salles, Prof. Xavier Le Roux 等",
+                        contributions: [
+                            "通过荟萃分析 (Meta-analysis) 比较单菌株和微生物联合体在活性土壤中的接种效果。",
+                            "进行群落聚结实验 (community coalescence experiment)，利用鸟枪法宏基因组测序研究其对土壤水平基因转移潜力的影响。",
+                            "提出了微生物接种应置于生态演替和群落组装框架下的观点，以应对气候变化挑战。"
+                        ]
+                    },
+                    { 
+                        title: "协同项目: 郊区关键带土壤-水系统中营养物质、金属和土壤微生物群落的命运", 
+                        type: "核心参与者", 
+                        time: "2020.11 – 2022.08", 
+                        collaborators: "浙江大学等",
+                        contributions: [
+                            "探索了表层施肥对土壤剖面中丰富和稀有微生物类群的响应和聚集，并揭示了其在不同土壤深度上的生态作用。",
+                            "研究了过度施肥后水稻土中磷和痕量金属浸出的风险。"
+                        ]
+                    }
+                ],
+                publications: [
+                    { citation: "Wang, H. *, **Liu, X.*, Chen, S., Sun, C., Chadwick, D. R., Jones, D. L., & Lin, X. (2026). Hydrophobic neutral and basic fractions of organic fertilizer-derived dissolved organic matter promote phosphorus mobilization in paddy soils. *Soil and Tillage Research*, 255, 106811.", status: "已发表 (共同一作)", doi: "https://doi.org/10.1016/j.still.2025.106811" },
+                    { citation: "**Liu, X.**, Shu, Y., Li, K., Wang, H., Bi, Q., Wang, H., ... & Lin, X. (2025). Organic matter accelerated microbial iron reduction and available phosphorus release in reflooded paddy soils. *Soil Ecology Letters*, 7(3), 250316.", status: "已发表", doi: "https://doi.org/10.1007/s42832-025-0316-0" },
+                    { citation: "**Liu, X.**, & Salles, J. F. (2024). Lose-lose consequences of bacterial community-driven invasions in soil. *Microbiome*, 12, 57.", status: "已发表", doi: "https://doi.org/10.1186/s40168-024-01763-7", note: "(首次揭示土壤微生物群落聚结的过程与机制)" },
+                    { citation: "**Liu, X.**, & Salles, J.F. (2024). Drivers and consequences of microbial community coalescence. *The ISME J*, 18(1), wrae179.", status: "系统综述", doi: "https://doi.org/10.1093/ismejo/wrae179" },
+                    { citation: "**Liu, X.**, Le Roux, X., & Salles, J. F. (2022). The legacy of microbial inoculants in agroecosystems and potential for tackling climate change challenges. *iScience*, 103821.", status: "观点论文", doi: "https://doi.org/10.1016/j.isci.2022.103821", note: "(强调微生物接种的生态学框架)" },
+                    { citation: "**Liu X.**, Hackl T., Salles J.F. (2023) Community coalescences altered the potential of horizontal gene transfer within the native soil microbiome. (Preprint).", status: "预印本/投稿中", doi: "https://doi.org/10.1101/2023.09.18.558195", note: "(从进化角度报告群落聚结的后果)" }
+                ],
+                skills: [
+                    { title: "核心研究专长 (Core Expertise)", items: ["微生物生态学 (Microbial Ecology)", "群落组装与动态 (Community Assembly)", "生物信息学 (Bioinformatics)", "生态系统可持续性 (Ecosystem Sustainability)"], color: "bg-primary" },
+                    { title: "技术与方法论 (Tech & Methodology)", items: ["数据分析 (Data Analysis)", "实验设计 (Experimental Design)", "微生物组学 (Microbial Omics)", "宏基因组测序 (Shotgun Metagenomics)", "Meta-analysis (荟萃分析)", "R, Python, Linux"], color: "bg-primary/60" },
+                    { title: "个人兴趣与爱好 (Personal Interests)", items: ["阅读、烹饪、篆刻", "桌游、旅行", "羽毛球、跑步、骑行"], color: "bg-primary/40" }
+                ],
+                awards: [
+                    "**FEMS2023 志愿者** (Federation of European Microbiological Societies) - 2023",
+                    "**ISME18 旅行基金** (International Society for Microbial Ecology) - 2022",
+                    "**中国国家留学基金委 (CSC) 四年期博士奖学金** - 2019",
+                    "**优秀毕业生** (福建农林大学) - 2017",
+                    "**优秀毕业生** (福建农林大学) - 2016",
+                    "**社会工作先进个人 (3次)** (福建农林大学) - 2013, 2014, 2015",
+                    "**二等奖学金 (2次)** (福建农林大学) - 2014, 2015",
+                ],
+                footer: {
+                    copyright: "© 2024 Xipeng LIU. 保留所有权利。",
+                    tech: "使用现代 Web 技术 (Tailwind CSS) 构建。"
+                },
+                gsLinkText: "查看所有出版物请访问 Google Scholar 主页。",
+            },
+            'en': {
+                name: "Xipeng LIU (刘曦鹏)",
+                title: "Microbial Ecologist (PhD) | CNRS Post-doctoral Fellow",
+                bio: "With a solid foundation in microbial ecology, data analysis, experimental design, and scientific communication, I am eager to continue pushing the boundaries of knowledge in the intricate dynamics of microbial communities and their interactions with the environment(s) and contribute to the coupling between ecological mechanisms and strategies for ecosystem sustainability.",
+                hIndexText: "h-index: 13",
+                citationCount: "Citations: 820+",
+                nav: {
+                    about: "About Me",
+                    experience: "Education & Experience",
+                    research: "Research Projects",
+                    publications: "Publications",
+                    skills: "Professional Skills",
+                },
+                sections: {
+                    experienceTitle: "Education & Professional Background",
+                    researchTitle: "Research Projects and Experience",
+                    publicationsTitle: "Selected Publications (H-index: 13)",
+                    skillsTitle: "Skills & Interests",
+                    awardsTitle: "Honors, Awards, and Services",
+                },
+                experience: [
+                    { title: "Post-doctoral Fellow", org: "Centre National de la Recherche Scientifique (CNRS), Lyon, France", field: "Focus: Microbial Community Ecology and Climate Change", time: "March 2024 – Present", highlight: true, note: "Advisor: Prof. Ashley Shade" },
+                    { title: "Ph.D.", org: "University of Groningen, The Netherlands", field: "Major: Microbial Community Ecology", time: "Nov 2019 – Jan 2024", note: "Advisors: Prof. Joana Falcão Salles, Assistant Prof. Thomas Hackl" },
+                    { title: "Visiting Student", org: "Institute of Urban Environment, Chinese Academy of Sciences, Xiamen, China", field: "Focus: Environmental Microbial Ecology and Bioinformatics", time: "Sep 2017 – Jan 2019", note: "Advisor: Prof. Xuming Wang" },
+                    { title: "M.Sc.", org: "Zhejiang University, Hangzhou, China", field: "Major: Agricultural Resource Utilization", time: "Sep 2016 – Sep 2019", note: "Advisor: Prof. Xiaorong Lin" }
+                ],
+                research: [
+                    { 
+                        title: "ERC Project: Unraveling Microrescue Mechanisms for Climate Change Resilience (MicroRescue)", 
+                        type: "Postdoc Project", 
+                        time: "March 2024 – Present", 
+                        collaborators: "Prof. Ashley Shade, Dr. Milena Gonzalo, et al.",
+                        contributions: [
+                            "Explored the composition and function of dormant soil microbes in Europe, revealing their ecological role in microbiome resilience under climate change.",
+                            "Assessed the inactivation and persistence of soil microbes to extreme climatic events, and studied the biogeographic patterns and dynamics of microbial activity."
+                        ]
+                    },
+                    { 
+                        title: "PhD Project: Mechanisms and Consequences of Microbial Invasion in Active Soils", 
+                        type: "PhD Research", 
+                        time: "Nov 2019 – Jan 2024", 
+                        collaborators: "Prof. Joana Falcão Salles, Prof. Xavier Le Roux, et al.",
+                        contributions: [
+                            "Conducted a meta-analysis comparing the inoculation effects of single strains and microbial consortia in active soils.",
+                            "Performed community coalescence experiments and used shotgun metagenomics to investigate impacts on horizontal gene transfer potential in soil.",
+                            "Proposed that microbial inoculation should be viewed within an ecological succession and community assembly framework to tackle climate change challenges."
+                        ]
+                    },
+                    { 
+                        title: "Collaborative Project: Fate of Nutrients, Metals, and Soil Microbial Communities in Peri-urban Critical Zone Soil-Water Systems", 
+                        type: "Core Participant", 
+                        time: "Nov 2020 – Aug 2022", 
+                        collaborators: "Zhejiang University, et al.",
+                        contributions: [
+                            "Explored the response and accumulation of abundant and rare microbial taxa in soil profiles to surface fertilization, and elucidated their ecological roles at different soil depths.",
+                            "Investigated the risk of phosphorus and trace metal leaching in paddy soils after excessive fertilization."
+                        ]
+                    }
+                ],
+                publications: [
+                    { citation: "Wang, H. *, **Liu, X.*, Chen, S., Sun, C., Chadwick, D. R., Jones, D. L., & Lin, X. (2026). Hydrophobic neutral and basic fractions of organic fertilizer-derived dissolved organic matter promote phosphorus mobilization in paddy soils. *Soil and Tillage Research*, 255, 106811.", status: "Published (Co-first)", doi: "https://doi.org/10.1016/j.still.2025.106811" },
+                    { citation: "**Liu, X.**, Shu, Y., Li, K., Wang, H., Bi, Q., Wang, H., ... & Lin, X. (2025). Organic matter accelerated microbial iron reduction and available phosphorus release in reflooded paddy soils. *Soil Ecology Letters*, 7(3), 250316.", status: "Published", doi: "https://doi.org/10.1007/s42832-025-0316-0" },
+                    { citation: "**Liu, X.**, & Salles, J. F. (2024). Lose-lose consequences of bacterial community-driven invasions in soil. *Microbiome*, 12, 57.", status: "Published", doi: "https://doi.org/10.1186/s40168-024-01763-7", note: "(First report on the process and mechanisms of soil microbial community coalescence)" },
+                    { citation: "**Liu, X.**, & Salles, J.F. (2024). Drivers and consequences of microbial community coalescence. *The ISME J*, 18(1), wrae179.", status: "System Review", doi: "https://doi.org/10.1093/ismejo/wrae179" },
+                    { citation: "**Liu, X.**, Le Roux, X., & Salles, J. F. (2022). The legacy of microbial inoculants in agroecosystems and potential for tackling climate change challenges. *iScience*, 103821.", status: "Perspective", doi: "https://doi.org/10.1016/j.isci.2022.103821", note: "(Emphasizes the ecological framework for microbial inoculation)" },
+                    { citation: "**Liu X.**, Hackl T., Salles J.F. (2023) Community coalescences altered the potential of horizontal gene transfer within the native soil microbiome. (Preprint).", status: "Preprint/Submitted", doi: "https://doi.org/10.1101/2023.09.18.558195", note: "(Reporting the evolutionary consequences of community coalescence)" }
+                ],
+                skills: [
+                    { title: "Core Expertise", items: ["Microbial Ecology", "Community Assembly & Dynamics", "Bioinformatics", "Ecosystem Sustainability"], color: "bg-primary" },
+                    { title: "Tech & Methodology", items: ["Data Analysis", "Experimental Design", "Microbial Omics", "Shotgun Metagenomics", "Meta-analysis", "R, Python, Linux"], color: "bg-primary/60" },
+                    { title: "Personal Interests", items: ["Reading, Cooking, Seal Cutting", "Board Games, Traveling", "Badminton, Running, Cycling"], color: "bg-primary/40" }
+                ],
+                awards: [
+                    "**FEMS2023 Volunteer** (Federation of European Microbiological Societies) - 2023",
+                    "**ISME18 Travel Grant** (International Society for Microbial Ecology) - 2022",
+                    "**Four-year PhD Scholarship** (China Scholarship Council - CSC) - 2019",
+                    "**Award of Honor for Graduate** (Fujian Agriculture and Forestry University - FAFU) - 2017",
+                    "**Excellent Graduate** (FAFU) - 2016",
+                    "**Advanced Individual of Social Work (3 times)** (FAFU) - 2013, 2014, 2015",
+                    "**Second-class Scholarship (2 times)** (FAFU) - 2014, 2015",
+                ],
+                footer: {
+                    copyright: "© 2024 Xipeng LIU. All Rights Reserved.",
+                    tech: "Built using modern Web technologies (Tailwind CSS)."
+                },
+                gsLinkText: "View all publications on Google Scholar profile.",
+            }
+        };
+
+        // 步骤 1: 动态渲染经验列表
+        function renderExperience(lang) {
+            const expContainer = document.getElementById('experience-container');
+            const data = contentData[lang].experience;
+            expContainer.innerHTML = data.map(exp => `
+                <div class="bg-white shadow-lg rounded-xl p-6 mb-6 transition duration-300 hover:shadow-xl ${exp.highlight ? 'border-l-4 border-primary' : ''}">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900">${exp.title}</h3>
+                            <p class="text-lg ${exp.highlight ? 'text-primary' : 'text-gray-600'} font-medium">${exp.org}</p>
+                            <p class="text-gray-600 text-base">${exp.field}</p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-600">${exp.time}</span>
+                    </div>
+                    ${exp.note ? `<p class="text-sm text-gray-500 mt-2">${lang === 'zh-CN' ? '导师' : 'Advisor'}：${exp.note.split(':')[1] ? exp.note.split(':')[1].trim() : exp.note}</p>` : ''}
+                </div>
+            `).join('');
+        }
+
+        // 步骤 2: 动态渲染科研项目列表
+        function renderResearch(lang) {
+            const researchContainer = document.getElementById('research-container');
+            const data = contentData[lang].research;
+            researchContainer.innerHTML = data.map((project, index) => `
+                <div class="bg-white shadow-lg rounded-xl p-6 mb-6 transition duration-300 hover:shadow-xl ${index === 0 ? 'border-t-4 border-primary' : ''}">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-2xl font-semibold text-gray-900">${project.title}</h3>
+                        <span class="text-sm font-medium text-primary bg-primary/10 rounded-full px-3 py-1">${project.type}</span>
+                    </div>
+                    <p class="text-gray-600 mb-3">
+                        ${lang === 'zh-CN' ? '时间' : 'Time'}：${project.time} | 
+                        ${lang === 'zh-CN' ? '合作者' : 'Collaborators'}：${project.collaborators}
+                    </p>
+                    <div class="text-gray-700">
+                        <p class="font-semibold mb-1">${lang === 'zh-CN' ? '关键贡献与职责：' : 'Key Contributions & Responsibilities:'}</p>
+                        <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+                            ${project.contributions.map(c => `<li>${c}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 步骤 3: 动态渲染出版物列表
+        function renderPublications(lang) {
+            const pubContainer = document.getElementById('publications-container');
+            const data = contentData[lang].publications;
+            pubContainer.innerHTML = data.map(pub => `
+                <div class="bg-white shadow-lg rounded-xl p-5 mb-4 transition duration-300 hover:border-l-4 hover:border-accent">
+                    <p class="text-lg font-medium text-gray-900 mb-2">${pub.citation}</p>
+                    <p class="text-gray-600 text-sm flex flex-wrap items-center space-x-3">
+                        <span class="font-semibold ${pub.status.includes('已发表') || pub.status.includes('Published') ? 'text-primary' : 'text-red-500'}">
+                            ${pub.status}
+                        </span>
+                        ${pub.note ? `<span class="text-xs text-gray-500">(${pub.note})</span>` : ''}
+                        <a href="${pub.doi}" target="_blank" class="text-blue-500 hover:underline flex items-center">
+                            DOI Link
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </p>
+                </div>
+            `).join('');
+
+            document.getElementById('gs-link-text').innerHTML = `<p class="text-center text-gray-500 pt-4">${contentData[lang].gsLinkText} <a href="https://scholar.google.com.hk/citations?user=KP7hOpoAAAAJ&hl=zh-CN&authuser=2" target="_blank" class="text-primary hover:underline">Google Scholar</a>。</p>`;
+        }
+
+        // 步骤 4: 动态渲染技能列表
+        function renderSkills(lang) {
+            const skillsContainer = document.getElementById('skills-container');
+            const data = contentData[lang].skills;
+            skillsContainer.innerHTML = data.map(category => `
+                <div>
+                    <h3 class="text-xl font-semibold text-accent mb-3">${category.title}</h3>
+                    <div class="flex flex-wrap gap-2">
+                        ${category.items.map(item => `
+                            <span class="${category.color} text-white text-sm font-medium px-4 py-1.5 rounded-full shadow-md">${item}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 步骤 5: 动态渲染荣誉列表
+        function renderAwards(lang) {
+            const awardsContainer = document.getElementById('awards-list');
+            const data = contentData[lang].awards;
+            awardsContainer.innerHTML = data.map(award => `
+                <li>${award}</li>
+            `).join('');
+        }
+
+        // 核心函数：根据语言加载所有内容
+        function loadContent(lang) {
+            const data = contentData[lang];
+            
+            // 头部/标题
+            document.getElementById('pageTitle').textContent = data.pageTitle || data.name + ' - ' + data.title; // HTML <title>
+            document.getElementById('site-name').textContent = data.name; // Nav Brand
+            
+            // 导航链接
+            document.getElementById('navAbout').textContent = data.nav.about;
+            document.getElementById('navExperience').textContent = data.nav.experience;
+            document.getElementById('navResearch').textContent = data.nav.research;
+            document.getElementById('navPublications').textContent = data.nav.publications;
+            document.getElementById('navSkills').textContent = data.nav.skills;
+
+            // 关于我
+            document.getElementById('about-name').textContent = data.name;
+            document.getElementById('about-title').textContent = data.title;
+            document.getElementById('bio-paragraph').textContent = data.bio;
+            document.getElementById('h-index-text').textContent = data.hIndexText;
+            document.getElementById('citation-count').textContent = data.citationCount;
+
+            // 主标题
+            document.getElementById('sectionTitleExperience').textContent = data.sections.experienceTitle;
+            document.getElementById('sectionTitleResearch').textContent = data.sections.researchTitle;
+            document.getElementById('sectionTitlePublications').textContent = data.sections.publicationsTitle;
+            document.getElementById('sectionTitleSkills').textContent = data.sections.skillsTitle;
+            document.getElementById('sectionTitleAwards').textContent = data.sections.awardsTitle;
+            
+            // 动态内容渲染
+            renderExperience(lang);
+            renderResearch(lang);
+            renderPublications(lang);
+            renderSkills(lang);
+            renderAwards(lang);
+
+            // 页脚
+            document.getElementById('footer-copyright').textContent = data.footer.copyright;
+            document.getElementById('footer-tech').textContent = data.footer.tech;
+            
+            // 更新 HTML lang 属性
+            document.documentElement.lang = lang === 'zh-CN' ? 'zh-CN' : 'en';
+
+            // 更新语言按钮的激活状态
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white');
+                btn.classList.add('bg-primary/10', 'text-primary');
+            });
+
+            const currentBtn = document.getElementById(`btn-${lang}`);
+            if (currentBtn) {
+                currentBtn.classList.remove('bg-primary/10', 'text-primary');
+                currentBtn.classList.add('bg-primary', 'text-white');
+            }
+
+            console.log(`Content loaded successfully for language: ${lang}`);
+        }
+
+        // 页面加载完成后默认加载中文内容
+        document.addEventListener('DOMContentLoaded', () => {
+            loadContent('zh-CN');
+        });
+    </script>
+
+</head>
+<body class="text-gray-800">
+
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-10 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div id="site-name" class="flex-shrink-0 text-2xl font-bold text-accent">
+                    Xipeng LIU (刘曦鹏)
+                </div>
+                <div class="flex items-center space-x-6">
+                    <!-- 导航链接 -->
+                    <div class="hidden md:flex space-x-6 text-lg">
+                        <a id="navAbout" href="#about" class="text-gray-600 hover:text-primary transition duration-300">关于我</a>
+                        <a id="navExperience" href="#experience" class="text-gray-600 hover:text-primary transition duration-300">教育与经历</a>
+                        <a id="navResearch" href="#research" class="text-gray-600 hover:text-primary transition duration-300">科研项目</a>
+                        <a id="navPublications" href="#publications" class="text-gray-600 hover:text-primary transition duration-300">出版物</a>
+                        <a id="navSkills" href="#skills" class="text-gray-600 hover:text-primary transition duration-300">专业技能</a>
+                    </div>
+                    
+                    <!-- 语言切换按钮 (Language Switcher) -->
+                    <div class="flex space-x-2 ml-4">
+                        <button id="btn-zh-CN" onclick="loadContent('zh-CN')" class="lang-btn px-3 py-1 text-sm rounded-full transition duration-300 bg-primary/10 text-primary hover:bg-primary hover:text-white font-medium">中文</button>
+                        <button id="btn-en" onclick="loadContent('en')" class="lang-btn px-3 py-1 text-sm rounded-full transition duration-300 bg-primary/10 text-primary hover:bg-primary hover:text-white font-medium">English</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主容器 -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        
+        <!-- 个人简介 (About Me) Section -->
+        <section id="about" class="bg-white shadow-2xl rounded-xl p-8 mb-12 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-10">
+            <!-- 头像 (Placeholder for Photo) -->
+            <div class="flex-shrink-0 w-40 h-40">
+                <img src="https://placehold.co/160x160/0056b3/ffffff?text=Xipeng+LIU" 
+                     alt="刘曦鹏的专业头像" 
+                     class="w-full h-full object-cover rounded-full border-4 border-primary shadow-lg">
+            </div>
+            
+            <!-- 简介文本 -->
+            <div class="flex-grow text-center md:text-left">
+                <h1 id="about-name" class="text-4xl sm:text-5xl font-extrabold text-accent mb-2"></h1>
+                <p id="about-title" class="text-xl text-gray-600 mb-4 font-medium"></p>
+                <p id="bio-paragraph" class="text-lg leading-relaxed text-gray-700"></p>
+                <!-- 联系方式/社交链接 -->
+                <div class="mt-4 flex flex-wrap justify-center md:justify-start space-x-4">
+                    <a href="mailto:xipeng.liu@cnrs.fr" class="text-primary hover:text-accent font-semibold transition duration-300">Email (Work)</a>
+                    <a href="mailto:xipengliu77@gmail.com" class="text-primary hover:text-accent font-semibold transition duration-300">Email (Personal)</a>
+                    <a href="https://scholar.google.com.hk/citations?user=KP7hOpoAAAAJ&hl=zh-CN&authuser=2" target="_blank" class="text-primary hover:text-accent font-semibold transition duration-300">Google Scholar</a>
+                    <a href="https://www.researchgate.net/profile/Xipeng-Liu-3" target="_blank" class="text-primary hover:text-accent font-semibold transition duration-300">ResearchGate</a>
+                    <p class="text-sm font-semibold text-gray-500 ml-4 mt-2 md:mt-0">
+                        <span id="h-index-text"></span> | <span id="citation-count"></span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教育与专业经历 (Education & Professional Background) Section -->
+        <section id="experience" class="mb-12">
+            <h2 id="sectionTitleExperience" class="text-3xl font-bold text-accent border-b-4 border-primary pb-2 mb-8"></h2>
+            
+            <!-- 动态内容渲染到此容器 -->
+            <div id="experience-container">
+                <!-- Content will be rendered by renderExperience(lang) -->
+            </div>
+        </section>
+
+
+        <!-- 科研经历 (Research Projects) Section -->
+        <section id="research" class="mb-12">
+            <h2 id="sectionTitleResearch" class="text-3xl font-bold text-accent border-b-4 border-primary pb-2 mb-8"></h2>
+            
+            <!-- 动态内容渲染到此容器 -->
+            <div id="research-container" class="space-y-6">
+                <!-- Content will be rendered by renderResearch(lang) -->
+            </div>
+        </section>
+
+        <!-- 出版物 (Publications) Section -->
+        <section id="publications" class="mb-12">
+            <h2 id="sectionTitlePublications" class="text-3xl font-bold text-accent border-b-4 border-primary pb-2 mb-8"></h2>
+
+            <div id="publications-container" class="space-y-6">
+                <!-- Content will be rendered by renderPublications(lang) -->
+            </div>
+            
+            <div id="gs-link-text">
+                <!-- Content will be rendered by renderPublications(lang) -->
+            </div>
+        </section>
+
+        <!-- 专业技能 (Skills) Section -->
+        <section id="skills" class="mb-12">
+            <h2 id="sectionTitleSkills" class="text-3xl font-bold text-accent border-b-4 border-primary pb-2 mb-8"></h2>
+            
+            <div class="bg-white shadow-lg rounded-xl p-6">
+                <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Content will be rendered by renderSkills(lang) -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 荣誉奖项 (Honors and Awards) Section -->
+        <section id="awards" class="mb-12">
+            <h2 id="sectionTitleAwards" class="text-3xl font-bold text-accent border-b-4 border-primary pb-2 mb-8"></h2>
+            
+            <div class="bg-white shadow-lg rounded-xl p-6">
+                <ul id="awards-list" class="list-disc list-outside ml-4 space-y-2 text-gray-700">
+                    <!-- Content will be rendered by renderAwards(lang) -->
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-accent text-white py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p id="footer-copyright"></p>
+            <p id="footer-tech" class="text-sm mt-2"></p>
+        </div>
+    </footer>
+
+</body>
+</html>
